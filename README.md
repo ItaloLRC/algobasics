@@ -2,7 +2,7 @@
 
 AlgoBasics é uma plataforma de estudo de algoritmos e estruturas de dados por meio de artigos. O leitor pode explorar o conteúdo por assunto, abrir explicações com fórmulas matemáticas e votar nos artigos depois de criar uma conta.
 
-A aplicação tem uma interface em React e TypeScript, uma API em Django REST Framework e um banco PostgreSQL. O conteúdo dos artigos usa Markdown, com renderização de expressões matemáticas por KaTeX. O projeto está em desenvolvimento.
+A aplicação tem uma interface em React e TypeScript, uma API em Django REST Framework e um banco PostgreSQL. O conteúdo dos artigos usa Markdown, com renderização de expressões matemáticas por KaTeX.
 
 ## Funcionalidades
 
@@ -28,7 +28,7 @@ Durante o desenvolvimento, o Vite recebe as chamadas do navegador para `/api` e 
 
 ## Executar localmente
 
-São necessários Python, PostgreSQL e Node.js com npm. Para o frontend, use uma versão compatível com o Vite 7 declarado em `frontend/package.json`; o [guia do Vite](https://vite.dev/guide/) informa Node.js 20.19+ ou 22.12+. Para o backend, Python 3.12 é um ponto de partida compatível com Django 5.2 e 6.0. O repositório ainda não fixa uma combinação única de versões Python/Django.
+São necessários Python, PostgreSQL e Node.js com npm. Para o frontend, use uma versão compatível com o Vite 7 declarado em `frontend/package.json`; o [guia do Vite](https://vite.dev/guide/) informa Node.js 20.19+ ou 22.12+. Para o backend, Python 3.12 é um ponto de partida compatível com Django 5.2 e 6.0.
 
 ### Backend
 
@@ -44,7 +44,7 @@ Ative o ambiente com `source .venv/Scripts/activate` no Git Bash do Windows ou `
 python -m pip install django djangorestframework django-cors-headers psycopg2-binary
 ```
 
-Crie o banco PostgreSQL `dsa_learning` e ajuste `DATABASES` em [backend/settings.py](backend/settings.py) para a conexão do seu ambiente. As credenciais são configuradas nesse arquivo; o código atual não carrega automaticamente um `.env`.
+Crie o banco PostgreSQL `dsa_learning` e ajuste `DATABASES` em [backend/settings.py](backend/settings.py) para a conexão do seu ambiente.
 
 Depois, aplique as migrações e crie uma conta de administração:
 
@@ -54,7 +54,7 @@ python manage.py createsuperuser
 python manage.py runserver 127.0.0.1:8000
 ```
 
-O painel fica em [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/). Use-o para criar tags, cadastrar artigos em Markdown e marcar os artigos que devem aparecer como publicados. O repositório não inclui uma carga inicial de artigos.
+O painel fica em [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/). Use-o para criar tags, cadastrar artigos em Markdown e marcar os artigos que devem aparecer como publicados.
 
 ### Frontend
 
@@ -90,7 +90,7 @@ Abra [http://localhost:5173/](http://localhost:5173/), mantendo o Django em exec
 
 O backend usa autenticação por sessão e proteção CSRF. O frontend envia as credenciais da sessão e o token CSRF nas operações de acesso e votação.
 
-## Estado do projeto
+## Comandos do frontend
 
 O frontend possui scripts `dev`, `build`, `lint` e `preview`. A compilação e a análise estática podem ser executadas dentro de `frontend/`:
 
@@ -98,7 +98,3 @@ O frontend possui scripts `dev`, `build`, `lint` e `preview`. A compilação e a
 npm run build
 npm run lint
 ```
-
-O backend ainda não tem testes de aplicação implementados em `articles/tests.py`, e as dependências Python não estão registradas em um manifesto. Alguns módulos de processamento Markdown são importados sem declaração direta em `frontend/package.json`; a reprodução do ambiente precisa consolidar essas dependências.
-
-As configurações atuais são de desenvolvimento: `DEBUG=True`, conexão com banco em arquivo e permissão padrão `AllowAny` na API. A criação e a edição de artigos pelo `ModelViewSet` ainda precisam de uma política própria de autorização antes de uma publicação em produção.
