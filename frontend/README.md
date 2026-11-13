@@ -1,27 +1,29 @@
-# Frontend do AlgoBasics
+# AlgoBasics Frontend
 
-Interface da plataforma de estudo de algoritmos e estruturas de dados, construída com **React, TypeScript e Vite**.
+English | [Português (Brasil)](README.pt-BR.md)
 
-## Funcionalidades
+Interface for the algorithms and data structures learning platform, built with **React, TypeScript, and Vite**.
 
-- Navegação por artigos e tags.
-- Leitura de conteúdo em Markdown com fórmulas matemáticas renderizadas por KaTeX.
-- Cadastro, login e estado de autenticação.
-- Votação em artigos para usuários autenticados.
-- Integração com a API Django REST Framework por meio de `/api`.
+## Features
 
-## Executar
+- Browse articles and tags.
+- Read Markdown content with mathematical formulas rendered by KaTeX.
+- Registration, login, and authentication state.
+- Article voting for authenticated users.
+- Integration with the Django REST Framework API through `/api`.
 
-Neste diretório:
+## Run
+
+From this directory:
 
 ```bash
 npm install
 npm run dev -- --host localhost
 ```
 
-Abra `http://localhost:5173/` com o backend em execução em `127.0.0.1:8000`. O Vite encaminha as chamadas de `/api` ao backend durante o desenvolvimento.
+Open `http://localhost:5173/` with the backend running at `127.0.0.1:8000`. Vite forwards `/api` requests to the backend during development.
 
-## Comandos
+## Commands
 
 ```bash
 npm run build
@@ -29,4 +31,4 @@ npm run lint
 npm run preview
 ```
 
-Consulte o [README principal](../README.md) para configurar o backend, o PostgreSQL e a API.
+See the [main README](../README.md) to configure the backend, PostgreSQL, and the API.
